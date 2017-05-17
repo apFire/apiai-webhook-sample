@@ -22,7 +22,7 @@ restService.post('/webhook', function (req, res) {
 
                 if (requestBody.result.fulfillment) {
                     speech += requestBody.result.fulfillment.speech;
-                    speech += ' awesome hook';	
+                    speech += ' awesome hook ';	
                 }
 
                 if (requestBody.result.action) {
@@ -35,7 +35,13 @@ restService.post('/webhook', function (req, res) {
 
         return res.json({
             speech: speech,
-            displayText: speech,
+            "messages": [
+                {
+                  "type": 0,
+                  "platform": "skype",
+                  "speech": speech
+                }
+            ],    
             source: 'apiai-webhook-sample'
         });
     } catch (err) {
