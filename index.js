@@ -13,21 +13,33 @@ restService.post('/webhook', function (req, res) {
 
     try {
         var speech = 'empty speech';
-
+        var messages = [];
+        
+        
         if (req.body) {
             var requestBody = req.body;
 
             if (requestBody.result) {
                 speech = '';
 
-                if (requestBody.result.fulfillment) {
+               /* if (requestBody.result.fulfillment) {
                     speech += requestBody.result.fulfillment.speech;
                     speech += ' awesome hook ';	
                 }
 
                 if (requestBody.result.action) {
                     speech += 'action: ' + requestBody.result.action;	
+                }*/
+                
+                if(requestBody.result.action === 'projectData') { 
+                    if(requestBody.result.parameters.i1-project === 'Intraday' && requestBody.result.parameters.Project-Artifact === 'Quickbase') { 
+                        speech += 'Here are ther Quickbase projects for ' + requestBody.result.parameters.i1-project;
+                        messages.push({ "type": 0, "platform": "skype","speech": speech});
+                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111111 Intraday description'});
+                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111112 Intraday description'});    
+                    }
                 }
+                
                 if(requestBody.result.action === 'Buddy') {
                     console.log(requestBody);
                     
@@ -44,13 +56,7 @@ restService.post('/webhook', function (req, res) {
 
         return res.json({
             speech: speech,
-            "messages": [
-                {
-                  "type": 0,
-                  "platform": "skype",
-                  "speech": speech
-                }
-            ],    
+            "messages": messages,    
             source: 'apiai-webhook-sample'
         });
     } catch (err) {
