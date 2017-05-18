@@ -73,12 +73,12 @@ restService.post('/webhook', function (req, res) {
                     
                     if(requestBody.result.parameters.Extension === 'Jayant') {
                         speech = 'Jayant\'s extension is 7887';
-                        messages.push({ "type": 0, "platform": "skype","speech": speech});
-                        messages.push({ "type": 0, "platform": '',"speech": speech);
+                        //messages.push({ "type": 0, "platform": "skype","speech": speech});
+                        //messages.push({ "type": 0, "platform": '',"speech": speech);
                     }  else {
                         speech = 'Sorry, could not find extension for ' + requestBody.result.parameters.Extension;
-                        messages.push({ "type": 0, "platform": "skype","speech": speech});
-                        messages.push({ "type": 0, "platform": '',"speech": speech});
+                        //messages.push({ "type": 0, "platform": "skype","speech": speech});
+                        //messages.push({ "type": 0, "platform": '',"speech": speech});
                     }
                 }        
             }
