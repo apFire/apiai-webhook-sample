@@ -33,7 +33,8 @@ restService.post('/webhook', function (req, res) {
                     
                     if(requestBody.result.parameters.Extension === 'Jayant') {
                         speech = 'Jayant\'s extension is 7887';
-                    }    
+                    }  else {
+                        speech = 'Sorry, could not find extension for ' + requestBody.result.parameters.Extension;
                 }        
             }
         }
