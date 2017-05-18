@@ -31,7 +31,7 @@ restService.post('/webhook', function (req, res) {
                 if(requestBody.result.action === 'Buddy') {
                     console.log(requestBody);
                     
-                    if(requestBody.result.contexts.parameters.Extension === 'Jayant') {
+                    if(requestBody.result.parameters.Extension === 'Jayant') {
                         speech = 'Jayant\'s extension is 7887';
                     }    
                 }        
