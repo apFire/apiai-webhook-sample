@@ -37,12 +37,18 @@ restService.post('/webhook', function (req, res) {
                         speech += 'Here are ther Quickbase projects for ' + requestBody.result.parameters.i1project;
                         messages.push({ "type": 0, "platform": "skype","speech": speech});
                         messages.push({ "type": 0, "platform": "skype","speech": 'QB111111 Intraday description'});
-                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111112 Intraday description'});    
+                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111112 Intraday description'});
+                        messages.push({ "type": 0, "platform": "","speech": speech});
+                        messages.push({ "type": 0, "platform": "","speech": 'QB111111 Intraday description'});
+                        messages.push({ "type": 0, "platform": "","speech": 'QB111112 Intraday description'});
                     } else if(requestBody.result.parameters.i1ProjectArtifact === 'documentation') { 
                         speech += 'Here are ther Quickbase projects for ' + requestBody.result.parameters.i1project;
                         messages.push({ "type": 0, "platform": "skype","speech": speech});
                         messages.push({ "type": 0, "platform": "skype","speech": 'QB111111 Intraday description'});
-                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111112 Intraday description'});    
+                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111112 Intraday description'});
+                        messages.push({ "type": 0, "platform": "","speech": speech});
+                        messages.push({ "type": 0, "platform": "","speech": 'QB111111 Intraday description'});
+                        messages.push({ "type": 0, "platform": "","speech": 'QB111112 Intraday description'}); 
                     } else if(requestBody.result.parameters.i1ProjectArtifact === 'SME') { 
                         speech += 'SME for ' + requestBody.result.parameters.i1project + ' projects are';
                         messages.push({ "type": 0, "platform": "skype","speech": speech});
@@ -50,8 +56,14 @@ restService.post('/webhook', function (req, res) {
                         messages.push({ "type": 0, "platform": "skype","speech": 'Gaurav (9999)'});
                         messages.push({ "type": 0, "platform": "skype","speech": 'Niranjan (9999)'});
                         messages.push({ "type": 0, "platform": "skype","speech": 'These guys will help you'});
+                        messages.push({ "type": 0, "platform": "","speech": speech});
+                        messages.push({ "type": 0, "platform": "","speech": 'Jayant (9999)'});
+                        messages.push({ "type": 0, "platform": "","speech": 'Gaurav (9999)'});
+                        messages.push({ "type": 0, "platform": "","speech": 'Niranjan (9999)'});
+                        messages.push({ "type": 0, "platform": "","speech": 'These guys will help you'});
                     } else { 
                        messages.push({ "type": 0, "platform": "skype","speech": 'Sorry I can not help you with this but I guess Jayant can. you should get in touch'});   
+                       messages.push({ "type": 0, "platform": "","speech": 'Sorry I can not help you with this but I guess Jayant can. you should get in touch'}); 
                     }
                     }
                 }
@@ -61,8 +73,12 @@ restService.post('/webhook', function (req, res) {
                     
                     if(requestBody.result.parameters.Extension === 'Jayant') {
                         speech = 'Jayant\'s extension is 7887';
+                        messages.push({ "type": 0, "platform": "skype","speech": speech});
+                        messages.push({ "type": 0, "platform": "","speech": speech);
                     }  else {
                         speech = 'Sorry, could not find extension for ' + requestBody.result.parameters.Extension;
+                        messages.push({ "type": 0, "platform": "skype","speech": speech});
+                        messages.push({ "type": 0, "platform": "","speech": speech});
                     }
                 }        
             }
