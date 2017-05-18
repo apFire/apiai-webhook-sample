@@ -49,7 +49,7 @@ restService.post('/webhook', function (req, res) {
                         messages.push({ "type": 0, "platform": "skype","speech": 'Jayant (9999)'});
                         messages.push({ "type": 0, "platform": "skype","speech": 'Gaurav (9999)'});
                         messages.push({ "type": 0, "platform": "skype","speech": 'Niranjan (9999)'});
-                        messages.push({ "type": 0, "platform": "skype","speech": 'These guys will be will to hep you out'});
+                        messages.push({ "type": 0, "platform": "skype","speech": 'These guys will help you'});
                     } else { 
                        messages.push({ "type": 0, "platform": "skype","speech": 'Sorry I can not help you with this but I guess Jayant can. you should get in touch'});   
                     }
