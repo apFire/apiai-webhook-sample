@@ -40,7 +40,7 @@ restService.post('/webhook', function (req, res) {
                         messages.push({ "type": 0,"platform":"skype","speech": 'QB111112 Intraday description'});
                         speech += 'QB111111 Intraday description and QB111112 Intraday description';
                         messages.push({ "type": 0,"platform":"default","speech": speech});
-                    } else if(requestBody.result.parameters.i1ProjectArtifact === 'documentation') { 
+                    } else if(requestBody.result.parameters.i1ProjectArtifact === 'Documentation') { 
                         speech += 'Here is the documentation I found on ' + requestBody.result.parameters.i1project + '. Hope this helps.';
                         messages.push({ "type": 0, "platform": "skype","speech": speech});
                         messages.push({ "type": 0, "platform": "skype","speech": 'QB111111 Intraday description 1'});
