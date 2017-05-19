@@ -55,7 +55,7 @@ restService.post('/webhook', function (req, res) {
                         messages.push({ "type": 0,"platform":"default","speech": speech + 'Jayant (9999) Gaurav (9999) Niranjan (9999). These guys will help you.'});
                     } else { 
                        messages.push({ "type": 0,"platform":"skype","speech": 'Sorry I can not help you with this but I guess Jayant can. you should get in touch'});   
-                       messages.push({ "type": 0,"platform":"default""speech": 'Sorry I can not help you with this but I guess Jayant can. you should get in touch'}); 
+                       messages.push({ "type": 0,"platform":"default","speech": 'Sorry I can not help you with this but I guess Jayant can. you should get in touch'}); 
                     }
                     }
                 }
