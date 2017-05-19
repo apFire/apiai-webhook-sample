@@ -38,13 +38,15 @@ restService.post('/webhook', function (req, res) {
                         messages.push({ "type": 0,"platform":"skype","speech": speech});
                         messages.push({ "type": 0,"platform":"skype","speech": 'QB111111 Intraday description'});
                         messages.push({ "type": 0,"platform":"skype","speech": 'QB111112 Intraday description'});
-                        messages.push({ "type": 0,"platform":"default","speech": speech + 'QB111111 Intraday description' + 'QB111112 Intraday description'});
+                        speech += 'QB111111 Intraday description' + 'QB111112 Intraday description';
+                        messages.push({ "type": 0,"platform":"default","speech": speech});
                     } else if(requestBody.result.parameters.i1ProjectArtifact === 'documentation') { 
                         speech += 'Here are ther Quickbase projects for ' + requestBody.result.parameters.i1project;
                         messages.push({ "type": 0, "platform": "skype","speech": speech});
-                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111111 Intraday description'});
-                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111112 Intraday description'});
-                        messages.push({ "type": 0,"platform":"default","speech": speech + 'QB111111 Intraday description' + 'QB111112 Intraday description'});
+                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111111 Intraday description 1'});
+                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111112 Intraday description 2'});
+                        speech += 'Intraday description 1 and Intraday description 2';
+                        messages.push({ "type": 0,"platform":"default","speech": speech});
                     } else if(requestBody.result.parameters.i1ProjectArtifact === 'SME') { 
                         speech += 'SME for ' + requestBody.result.parameters.i1project + ' projects are';
                         messages.push({ "type": 0,"platform": "skype","speech": speech});
@@ -52,10 +54,12 @@ restService.post('/webhook', function (req, res) {
                         messages.push({ "type": 0,"platform": "skype","speech": 'Gaurav (9999)'});
                         messages.push({ "type": 0,"platform": "skype","speech": 'Niranjan (9999)'});
                         messages.push({ "type": 0,"platform": "skype","speech": 'These guys will help you'});
-                        messages.push({ "type": 0,"platform":"default","speech": speech + 'Jayant (9999) Gaurav (9999) Niranjan (9999). These guys will help you.'});
+                        speech += 'Jayant (9999) Gaurav (9999) Niranjan (9999). These guys will help you.';
+                        messages.push({ "type": 0,"platform":"default","speech": speech});
                     } else { 
                        messages.push({ "type": 0,"platform":"skype","speech": 'Sorry I can not help you with this but I guess Jayant can. you should get in touch'});   
-                       messages.push({ "type": 0,"platform":"default","speech": 'Sorry I can not help you with this but I guess Jayant can. you should get in touch'}); 
+                       speech += 'Sorry I can not help you with this but I guess Jayant can. you should get in touch';
+                       messages.push({ "type": 0,"platform":"default","speech": speech}); 
                     }
                     }
                 }
