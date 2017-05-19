@@ -35,9 +35,9 @@ restService.post('/webhook', function (req, res) {
                     if (requestBody.result.parameters.i1project === 'Intraday') {
                     if(requestBody.result.parameters.i1ProjectArtifact === 'Quickbase') { 
                         speech += 'Here are ther Quickbase projects for ' + requestBody.result.parameters.i1project;
-                        messages.push({ "type": 0, "platform": "skype","speech": speech});
-                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111111 Intraday description'});
-                        messages.push({ "type": 0, "platform": "skype","speech": 'QB111112 Intraday description'});
+                        messages.push({ "type": 0,"speech": speech});
+                        messages.push({ "type": 0,"speech": 'QB111111 Intraday description'});
+                        messages.push({ "type": 0,"speech": 'QB111112 Intraday description'});
                        // messages.push({ "type": 0, "platform": "","speech": speech});
                        //messages.push({ "type": 0, "platform": "","speech": 'QB111111 Intraday description'});
                        //messages.push({ "type": 0, "platform": "","speech": 'QB111112 Intraday description'});
